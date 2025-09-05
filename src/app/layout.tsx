@@ -1,15 +1,9 @@
-<<<<<<< HEAD
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import '@/brand/fonts.css'
 import '@/brand/theme.css'
 import '@/brand/motion.css'
-=======
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
 
 const inter = Inter({
   variable: '--font-inter',
@@ -48,17 +42,12 @@ export const metadata: Metadata = {
     images: ['https://tl-lsg.vercel.app/opengraph.png'],
     creator: '@TLLSG',
   },
-<<<<<<< HEAD
 }
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: '#1f58ad',
-=======
-  themeColor: '#1f58ad',
-  viewport: 'width=device-width, initial-scale=1',
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
 }
 
 export default function RootLayout({
@@ -68,11 +57,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-<<<<<<< HEAD
       <body className={`${inter.variable} font-body antialiased`} suppressHydrationWarning={true}>
-=======
-      <body className={`${inter.variable} font-body antialiased`}>
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
         {children}
       </body>
     </html>

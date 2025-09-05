@@ -1,18 +1,18 @@
 {
   "/api/admin/delete-user/route": "app/api/admin/delete-user/route.js",
-  "/api/admin/debug-env/route": "app/api/admin/debug-env/route.js",
-  "/api/admin/login/route": "app/api/admin/login/route.js",
   "/api/admin/submissions/[id]/route": "app/api/admin/submissions/[id]/route.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/api/admin/submissions/route": "app/api/admin/submissions/route.js",
-  "/api/admin/test-auth/route": "app/api/admin/test-auth/route.js",
   "/api/admin/test-db/route": "app/api/admin/test-db/route.js",
+  "/api/admin/debug-env/route": "app/api/admin/debug-env/route.js",
   "/api/admin/users/route": "app/api/admin/users/route.js",
-  "/api/admin/test-submission/route": "app/api/admin/test-submission/route.js",
+  "/api/admin/login/route": "app/api/admin/login/route.js",
   "/api/submit/route": "app/api/submit/route.js",
+  "/api/admin/test-submission/route": "app/api/admin/test-submission/route.js",
+  "/api/admin/test-auth/route": "app/api/admin/test-auth/route.js",
   "/api/health/route": "app/api/health/route.js",
-  "/admin/page": "app/admin/page.js",
   "/privacy-policy/page": "app/privacy-policy/page.js",
   "/page": "app/page.js",
-  "/terms-of-service/page": "app/terms-of-service/page.js"
+  "/terms-of-service/page": "app/terms-of-service/page.js",
+  "/admin/page": "app/admin/page.js"
 }

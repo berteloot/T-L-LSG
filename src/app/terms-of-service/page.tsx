@@ -139,26 +139,8 @@ export default function TermsOfService() {
                 Contact Information
               </h2>
               <p className="mb-6">
-<<<<<<< HEAD
-                If you have any questions, complaints, suggestions or comments about these Legal Conditions, you can contact us as follows:
-              </p>
-              <div className="mb-6">
-                <p className="mb-4">
-                  <strong>Through the application contact form.</strong>
-                </p>
-                <p className="mb-6">
-                  If you use the application contact form, you must provide us with as much information as possible about your request: name and surname, email address you use for our Web Portal and the reasons for your request.
-                </p>
-                <p className="mb-4">
-                  <a href="https://www.leangroup.com/contact" className="text-accent-600 hover:text-accent-700 underline">
-                    https://www.leangroup.com/contact
-                  </a>
-                </p>
-              </div>
-=======
                 If you have any questions about these Terms of Service, please contact us:
               </p>
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
               <div className="bg-background-surface p-4 rounded-lg mb-6">
                 <p className="mb-2">
                   <strong>Lean Solutions Group</strong>

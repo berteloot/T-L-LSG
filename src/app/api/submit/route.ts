@@ -16,7 +16,6 @@ const submitRequestSchema = z.object({
   sector: z.string().optional(),
   region: z.string().optional(),
   
-<<<<<<< HEAD
   // Assessment questions - using actual question IDs from frontend
   company_roles: z.array(z.string()).min(1, 'At least one selection required').max(8, 'Too many selections'),
   primary_focus: z.string().min(1, 'Please select an option'),
@@ -30,18 +29,6 @@ const submitRequestSchema = z.object({
   ai_concerns: z.record(z.string()).optional(), // Ranking data
   business_goal: z.string().optional(),
   guided_support: z.string().optional(),
-=======
-  // Assessment questions
-  q1: z.array(z.string()).min(1, 'At least one selection required').max(8, 'Too many selections'),
-  q2: z.string().min(1, 'Please select an option'),
-  q3: z.string().min(1, 'Please select an option'),
-  q4: z.string().min(1, 'Please select an option'),
-  q5: z.array(z.string()).min(1, 'At least one selection required').max(9, 'Too many selections'),
-  q6: z.array(z.string()).min(1, 'At least one selection required').max(6, 'Too many selections'),
-  q7: z.string().min(1, 'Please select an option'),
-  q8: z.array(z.string()).min(1, 'At least one selection required').max(3, 'Too many selections'),
-  q9: z.string().min(1, 'Please select an option'),
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
 }).strict(); // Reject any additional properties
 
 // Rate limiting configuration
@@ -168,7 +155,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-<<<<<<< HEAD
     // Map answers directly to scoring format (no need for q1-q9 mapping)
     const mappedAnswers: Answers = {
       company_roles: answers.company_roles,
@@ -186,10 +172,6 @@ export async function POST(request: NextRequest) {
 
     // SECURITY: Validate answer values are within expected ranges
     const totalScore = scoreAnswers(mappedAnswers);
-=======
-    // SECURITY: Validate answer values are within expected ranges
-    const totalScore = scoreAnswers(answers as Answers);
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
     if (totalScore.score < 0 || totalScore.score > totalScore.maxScore) {
       console.error('Score validation failed:', totalScore);
       return NextResponse.json(
@@ -201,11 +183,7 @@ export async function POST(request: NextRequest) {
     // Generate AI report using OpenAI
     let aiReport = '';
     try {
-<<<<<<< HEAD
       const prompt = buildReportPrompt(totalScore, mappedAnswers);
-=======
-      const prompt = buildReportPrompt(totalScore, answers as Answers);
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
       
       const openaiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
@@ -260,11 +238,7 @@ export async function POST(request: NextRequest) {
           personalizations: [
             {
               to: [{ email: email, name: `${company} Team` }],
-<<<<<<< HEAD
               subject: `Lean Solutions Group T&L AI Readiness Report - ${company}`,
-=======
-              subject: `Lean Solutions Group AI Readiness Report - ${company}`,
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
             },
           ],
           from: {
@@ -274,19 +248,11 @@ export async function POST(request: NextRequest) {
           content: [
             {
               type: 'text/plain',
-<<<<<<< HEAD
               value: generateEmailText(totalScore, aiReport, mappedAnswers, company),
             },
             {
               type: 'text/html',
               value: generateEmailHTML(totalScore, aiReport, mappedAnswers, company),
-=======
-              value: generateEmailText(totalScore, aiReport, answers as Answers, company),
-            },
-            {
-              type: 'text/html',
-              value: generateEmailHTML(totalScore, aiReport, answers as Answers, company),
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
             },
           ],
         }),
@@ -318,19 +284,11 @@ export async function POST(request: NextRequest) {
             }
           },
           company,
-<<<<<<< HEAD
           answers: answers, // Store the raw answers from validation
           score: totalScore.score,
           tier: mapTier(totalScore.tier),
           aiReport,
           painPoints: extractPainPoints(mappedAnswers),
-=======
-          answers,
-          score: totalScore.score,
-          tier: mapTier(totalScore.tier),
-          aiReport,
-          painPoints: extractPainPoints(answers as Answers),
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
           emailedAt: emailSent ? new Date() : null,
           emailStatus: emailSent ? 'SENT' : 'FAILED'
         }
@@ -378,7 +336,6 @@ function mapTier(tier: string): 'NOT_READY' | 'GETTING_STARTED' | 'AI_ENHANCED' 
   }
 }
 
-<<<<<<< HEAD
 function extractPainPoints(answers: Answers): string[] {
   const painPoints: string[] = [];
   
@@ -422,51 +379,6 @@ function extractPainPoints(answers: Answers): string[] {
   // system_count: Organizational Support
   const system_count = answers.system_count;
   if (system_count && ['interest_no_budget', 'limited_engagement'].includes(system_count)) {
-=======
-function extractPainPoints(answers: Record<string, string | string[]>): string[] {
-  const painPoints: string[] = [];
-  
-  // Simple logic based on answer values
-  // q1: Technology Infrastructure
-  const q1 = answers.q1 as string[];
-  if (q1 && (q1.includes('none') || q1.length === 0)) {
-    painPoints.push('Technology Infrastructure');
-  }
-  
-  // q2: Data Foundation
-  const q2 = answers.q2 as string;
-  if (q2 && ['separate_systems', 'no_centralized'].includes(q2)) {
-    painPoints.push('Data Foundation');
-  }
-  
-  // q3: Human Capital
-  const q3 = answers.q3 as string;
-  if (q3 && ['no_training_open', 'resistant'].includes(q3)) {
-    painPoints.push('Human Capital');
-  }
-  
-  // q4: Strategic Planning
-  const q4 = answers.q4 as string;
-  if (q4 && ['limited_scaling', 'no_scalability'].includes(q4)) {
-    painPoints.push('Strategic Planning');
-  }
-  
-  // q5: Measurement & Analytics
-  const q5 = answers.q5 as string[];
-  if (q5 && (q5.includes('none') || q5.length === 0)) {
-    painPoints.push('Measurement & Analytics');
-  }
-  
-  // q6: Risk Management
-  const q6 = answers.q6 as string[];
-  if (q6 && (q6.includes('none') || q6.length === 0)) {
-    painPoints.push('Risk Management');
-  }
-  
-  // q7: Organizational Support
-  const q7 = answers.q7 as string;
-  if (q7 && ['interest_no_budget', 'limited_engagement'].includes(q7)) {
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
     painPoints.push('Organizational Support');
   }
   
@@ -498,11 +410,7 @@ function generateEmailHTML(result: ScoreResult, aiReport: string, answers: Answe
           overflow: hidden;
         }
         .header { 
-<<<<<<< HEAD
           background: linear-gradient(135deg, #0099FF 0%, #006EF2 100%); 
-=======
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
           color: white; 
           padding: 40px 30px; 
           text-align: center; 
@@ -523,7 +431,6 @@ function generateEmailHTML(result: ScoreResult, aiReport: string, answers: Answe
         .company-name { 
           font-size: 20px; 
           font-weight: 600; 
-<<<<<<< HEAD
           color: #001F38; 
           margin-bottom: 20px;
           text-align: center;
@@ -535,35 +442,16 @@ function generateEmailHTML(result: ScoreResult, aiReport: string, answers: Answe
         .score-card { 
           background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
           border: 2px solid #0099FF; 
-=======
-          color: #495057; 
-          margin-bottom: 20px;
-          text-align: center;
-          padding: 15px;
-          background: #f8f9fa;
-          border-radius: 8px;
-        }
-        .score-card { 
-          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-          border: 2px solid #dee2e6; 
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
           border-radius: 12px; 
           padding: 30px; 
           margin: 25px 0; 
           text-align: center; 
-<<<<<<< HEAD
           box-shadow: 0 4px 14px 0 rgba(0, 153, 255, 0.15);
-=======
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
         }
         .score { 
           font-size: 56px; 
           font-weight: 800; 
-<<<<<<< HEAD
           color: #0099FF; 
-=======
-          color: #007bff; 
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
           margin-bottom: 10px;
           line-height: 1;
         }
@@ -574,11 +462,7 @@ function generateEmailHTML(result: ScoreResult, aiReport: string, answers: Answe
         }
         .tier { 
           font-size: 28px; 
-<<<<<<< HEAD
           color: #006EF2; 
-=======
-          color: #28a745; 
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
           font-weight: 700;
           margin: 0;
         }
@@ -612,20 +496,12 @@ function generateEmailHTML(result: ScoreResult, aiReport: string, answers: Answe
         }
         .section-score {
           font-weight: 700;
-<<<<<<< HEAD
           color: #0099FF;
-=======
-          color: #007bff;
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
           font-size: 16px;
         }
         .ai-report { 
           background: #f8f9fa; 
-<<<<<<< HEAD
           border-left: 4px solid #0099FF; 
-=======
-          border-left: 4px solid #007bff; 
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
           padding: 25px; 
           margin: 25px 0; 
           border-radius: 0 8px 8px 0;
@@ -651,17 +527,10 @@ function generateEmailHTML(result: ScoreResult, aiReport: string, answers: Answe
           text-align: center; 
           margin-top: 30px; 
           padding: 25px; 
-<<<<<<< HEAD
           color: #001F38; 
           font-size: 14px;
           background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
           border-top: 2px solid #0099FF;
-=======
-          color: #6c757d; 
-          font-size: 14px;
-          background: #f8f9fa;
-          border-top: 1px solid #e9ecef;
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
         }
         .footer p {
           margin: 8px 0;
@@ -678,11 +547,7 @@ function generateEmailHTML(result: ScoreResult, aiReport: string, answers: Answe
     <body>
       <div class="container">
         <div class="header">
-<<<<<<< HEAD
           <h1>T&L - AI Readiness Assessment Report</h1>
-=======
-          <h1>CX - AI Readiness Assessment Report</h1>
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
           <p>Your personalized analysis and roadmap for AI transformation</p>
         </div>
 
@@ -740,11 +605,7 @@ function generateEmailText(result: ScoreResult, aiReport: string, answers: Answe
     .trim();
 
   return `
-<<<<<<< HEAD
 LEAN SOLUTIONS GROUP - T&L - AI READINESS ASSESSMENT REPORT
-=======
-LEAN SOLUTIONS GROUP - CX - AI READINESS ASSESSMENT REPORT
->>>>>>> 7b549a7c02875b8c09f0b8b8ceaea02e4470cf77
 ====================================================
 
 Company: ${company}
