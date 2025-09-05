@@ -7,14 +7,23 @@ import LSGIcon from '@/components/LSGIcon';
 import { z } from 'zod';
 
 interface AssessmentFormData {
-  q1: string[];
-  q2: string;
-  q3: string;
-  q4: string;
-  q5: string[];
-  q6: string[];
-  q7: string;
+  company_roles: string[];
+  primary_focus: string;
+  operational_footprint: string;
+  company_size: string;
+  improvement_areas: string[];
+  pressure_areas: string[];
+  system_count: string;
+  performance_tracking: string;
+  leadership_views: string;
+  ai_concerns?: Record<string, string>;
+  business_goal?: string;
+  guided_support?: string;
   company?: string;
+  email?: string;
+  consent?: boolean;
+  sector?: string;
+  region?: string;
 }
 
 interface ContactData {
