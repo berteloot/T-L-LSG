@@ -1,0 +1,20 @@
+/* Reveal down */
+@keyframes lsg-reveal {
+  0% { opacity: 0; transform: translateY(-6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.lsg-reveal { animation: lsg-reveal 220ms ease-out; }
+
+/* Emphasize with scale */
+@keyframes lsg-emphasize {
+  0% { transform: scale(0.98); }
+  100% { transform: scale(1); }
+}
+.lsg-emphasize { animation: lsg-emphasize 160ms ease-out; }
+
+/* Volumetric flip (subtle 3D plane) */
+@keyframes lsg-volume {
+  0% { transform: perspective(800px) rotateX(-6deg); opacity: 0; }
+  100% { transform: perspective(800px) rotateX(0deg); opacity: 1; }
+}
+.lsg-volume { animation: lsg-volume 260ms ease-out; }

@@ -1,0 +1,385 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #001F38; /* Midnight Core */
+  background: #ffffff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  /* LSG Brand Gradients */
+  .primary-gradient {
+    background: linear-gradient(135deg, #0099FF 0%, #006EF2 100%); /* Lean Blue to Momentum Blue */
+  }
+  
+  .trust-gradient {
+    background: linear-gradient(135deg, #006EF2 0%, #002E66 100%); /* Momentum Blue to Trust Navy */
+  }
+  
+  .midnight-gradient {
+    background: linear-gradient(135deg, #002E66 0%, #001F38 100%); /* Trust Navy to Midnight Core */
+  }
+  
+  .accent-gradient {
+    background: linear-gradient(135deg, #FF8221 0%, #fb923c 100%); /* Solar Orange - minimal usage */
+  }
+  
+  .solar-night-gradient {
+    background: linear-gradient(135deg, #450D0A 0%, #991b1b 100%); /* Solar Orange Night */
+  }
+  
+  .lavender-gradient {
+    background: linear-gradient(135deg, #A3A6FA 0%, #b8b2ff 100%); /* Lavender Mist */
+  }
+  
+  .aqua-gradient {
+    background: linear-gradient(135deg, #ABE8E5 0%, #5eead4 100%); /* Aqua Breeze */
+  }
+  
+  /* Brand Color Utilities */
+  .primary-border {
+    border-color: #0099FF; /* Lean Blue */
+  }
+  
+  .accent-border {
+    border-color: #FF8221; /* Solar Orange - minimal usage */
+  }
+  
+  .primary-text {
+    color: #0099FF; /* Lean Blue */
+  }
+  
+  .accent-text {
+    color: #FF8221; /* Solar Orange - minimal usage */
+  }
+  
+  .solar-night-text {
+    color: #450D0A; /* Solar Orange Night */
+  }
+  
+  .primary-bg {
+    background-color: #0099FF; /* Lean Blue */
+  }
+  
+  .accent-bg {
+    background-color: #FF8221; /* Solar Orange - minimal usage */
+  }
+  
+  .solar-night-bg {
+    background-color: #450D0A; /* Solar Orange Night */
+  }
+  
+  .trust-text {
+    color: #002E66; /* Trust Navy */
+  }
+  
+  .midnight-text {
+    color: #001F38; /* Midnight Core */
+  }
+  
+  /* LSG Brand Components - 30%+ blues/neutrals, minimal orange */
+  .question-card {
+    @apply bg-white rounded-2xl shadow-volumetric border border-neutral-200/50 p-6 sm:p-8 lg:p-12 max-w-4xl mx-auto;
+  }
+  
+  .option-card {
+    @apply p-4 sm:p-6 rounded-xl border-2 border-neutral-200 hover:border-lean-blue hover:shadow-brand transition-all duration-300 cursor-pointer;
+  }
+  
+  .option-card.selected {
+    @apply border-lean-blue bg-primary-50 shadow-brand ring-2 ring-primary-200;
+  }
+  
+  .option-card:hover {
+    @apply transform -translate-y-0.5;
+  }
+  
+  .btn-primary {
+    @apply px-6 sm:px-8 py-3 sm:py-4 primary-gradient text-white rounded-xl hover:shadow-brand-hover transition-all duration-200 font-semibold text-base sm:text-lg shadow-brand transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+  
+  .btn-accent {
+    @apply px-6 sm:px-8 py-3 sm:py-4 accent-gradient text-white rounded-xl hover:shadow-lg transition-all duration-200 font-semibold text-base sm:text-lg shadow-lg transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply px-4 sm:px-6 py-2 sm:py-3 border border-neutral-300 text-trust-navy rounded-xl hover:bg-neutral-50 hover:border-neutral-400 transition-all duration-300 font-medium;
+  }
+  
+  .btn-trust {
+    @apply px-6 sm:px-8 py-3 sm:py-4 trust-gradient text-white rounded-xl hover:shadow-brand-hover transition-all duration-200 font-semibold text-base sm:text-lg shadow-brand transform hover:-translate-y-0.5;
+  }
+  
+  .btn-solar-night {
+    @apply px-6 sm:px-8 py-3 sm:py-4 solar-night-gradient text-white rounded-xl hover:shadow-lg transition-all duration-200 font-semibold text-base sm:text-lg shadow-lg transform hover:-translate-y-0.5;
+  }
+
+  /* Question type indicators - following 30%+ blues/neutrals rule */
+  .question-type-multi {
+    @apply bg-primary-50 border border-primary-200 text-trust-navy p-3 sm:p-4 rounded-xl;
+  }
+  
+  .question-type-single {
+    @apply bg-lavender-50 border border-lavender-200 text-trust-navy p-3 sm:p-4 rounded-xl;
+  }
+  
+  .question-type-ranking {
+    @apply bg-aqua-50 border border-aqua-200 text-trust-navy p-3 sm:p-4 rounded-xl;
+  }
+  
+  /* Better option alignment */
+  .option-content {
+    @apply flex items-start space-x-3 sm:space-x-4;
+  }
+  
+  .option-checkbox {
+    @apply flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded border-2 flex items-center justify-center;
+  }
+  
+  .option-radio {
+    @apply flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 flex items-center justify-center;
+  }
+  
+  .option-text {
+    @apply flex-1 min-w-0;
+  }
+  
+  .option-label {
+    @apply font-semibold text-neutral-900 text-base sm:text-lg mb-1 sm:mb-2 leading-tight;
+  }
+  
+  .option-description {
+    @apply text-neutral-600 text-sm sm:text-base leading-relaxed;
+  }
+  
+  /* Progress bar improvements */
+  .progress-container {
+    @apply mb-6 sm:mb-8;
+  }
+  
+  .progress-info {
+    @apply flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3 gap-2 sm:gap-0;
+  }
+  
+  .progress-bar {
+    @apply w-full bg-neutral-200 rounded-full h-2 relative;
+  }
+  
+  .progress-fill {
+    @apply primary-gradient h-2 rounded-full transition-all duration-500 ease-out;
+  }
+
+  /* LSG Typography with Forma DJR */
+  .question-title {
+    @apply text-h2 font-forma font-semibold text-midnight-core mb-3 sm:mb-4 leading-tight;
+  }
+  
+  .question-subtitle {
+    @apply text-body font-forma text-trust-navy leading-relaxed;
+  }
+  
+  .display-title {
+    @apply text-display font-forma font-bold text-midnight-core leading-tight;
+  }
+  
+  .section-title {
+    @apply text-h1 font-forma font-semibold text-trust-navy leading-tight;
+  }
+  
+  .card-title {
+    @apply text-h3 font-forma font-medium text-midnight-core leading-tight;
+  }
+  
+  .body-text {
+    @apply text-body font-forma text-trust-navy leading-relaxed;
+  }
+  
+  .small-text {
+    @apply text-small font-forma text-neutral-600 leading-normal;
+  }
+
+  /* Mobile-first responsive improvements */
+  .mobile-optimized {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6;
+  }
+
+  /* Enhanced spacing for mobile */
+  .mobile-spacing {
+    @apply space-y-4 sm:space-y-6;
+  }
+
+  /* Better touch targets for mobile */
+  .touch-friendly {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Improved shadows and borders */
+  .enhanced-shadow {
+    @apply shadow-card hover:shadow-lg transition-shadow duration-200;
+  }
+
+  .enhanced-border {
+    @apply border border-neutral-200 hover:border-neutral-300 transition-colors duration-200;
+  }
+
+  /* LSG Motion Principles - Volumetric and Functional */
+  .animate-volumetric-slide {
+    animation: volumetricSlide 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-volumetric-scale {
+    animation: volumetricScale 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-functional-reveal {
+    animation: functionalReveal 0.3s ease-out;
+  }
+
+  .animate-functional-guide {
+    animation: functionalGuide 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Legacy animations for compatibility */
+  .animate-slide-up {
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+
+  /* LSG Volumetric Keyframes */
+  @keyframes volumetricSlide {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95) rotateX(10deg);
+      filter: blur(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotateX(0deg);
+      filter: blur(0px);
+    }
+  }
+
+  @keyframes volumetricScale {
+    from {
+      opacity: 0;
+      transform: scale(0.8) rotateY(15deg);
+      filter: blur(2px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) rotateY(0deg);
+      filter: blur(0px);
+    }
+  }
+
+  @keyframes functionalReveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes functionalGuide {
+    from {
+      opacity: 0;
+      transform: translateX(-20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  /* Legacy keyframes for compatibility */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Custom scale utilities for subtle hover effects */
+  .scale-102 {
+    transform: scale(1.02);
+  }
+  
+  .scale-98 {
+    transform: scale(0.98);
+  }
+
+  /* Smooth transitions for all interactive elements */
+  * {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  /* Modal backdrop */
+  .modal-backdrop {
+    @apply fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4;
+  }
+
+  /* Modal content */
+  .modal-content {
+    @apply bg-white rounded-lg shadow-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto;
+  }
+
+  /* Scrollbar styling for modal */
+  .modal-content::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .modal-content::-webkit-scrollbar-track {
+    @apply bg-neutral-100 rounded-full;
+  }
+
+  .modal-content::-webkit-scrollbar-thumb {
+    @apply bg-neutral-300 rounded-full hover:bg-neutral-400;
+  }
+}
