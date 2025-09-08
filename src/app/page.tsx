@@ -142,12 +142,6 @@ export default function Home() {
                 Get personalized insights and actionable recommendations to accelerate your digital transformation journey in the T&L industry.
               </p>
               
-              {/* Version Badge */}
-              <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 mb-8">
-                <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-                Stable Version 1.0.0
-              </div>
-              
               {/* Key Benefits - LSG Brand Design */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto mb-8">
                 <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-neutral-200/50 shadow-sm hover:shadow-brand transition-all duration-200">
