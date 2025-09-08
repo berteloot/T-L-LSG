@@ -160,14 +160,12 @@ export default function Home() {
                   <p className="small-text text-xs sm:text-sm">AI-powered report delivered to your email in minutes</p>
                 </div>
                 
-                <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-neutral-200/50 shadow-sm hover:shadow-brand transition-all duration-200 relative">
+                <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-neutral-200/50 shadow-sm hover:shadow-brand transition-all duration-200">
                   <div className="w-12 h-12 bg-lavender-100 rounded-lg flex items-center justify-center mx-auto mb-3">
                     <LSGIcon name="truck" size="md" className="text-lavender-600" />
                   </div>
                   <h3 className="card-title mb-2 text-sm sm:text-base">Actionable Insights</h3>
                   <p className="small-text text-xs sm:text-sm">Personalized recommendations for your specific needs</p>
-                  {/* Solar Orange Night accent */}
-                  <div className="absolute top-2 right-2 w-1.5 h-1.5 bg-solar-orange-night rounded-full opacity-40"></div>
                 </div>
               </div>
               
@@ -176,11 +174,6 @@ export default function Home() {
               <div className="inline-flex items-center px-4 py-2 bg-primary-50 rounded-full text-trust-navy text-sm font-medium animate-functional-reveal">
                 <LSGIcon name="clock" size="sm" className="mr-2" />
                 Takes about 5-7 minutes to complete
-              </div>
-              
-              {/* Solar Orange Night Accent */}
-              <div className="mt-4 flex justify-center">
-                <div className="w-2 h-2 bg-solar-orange-night rounded-full animate-pulse"></div>
               </div>
             </div>
           </div>
