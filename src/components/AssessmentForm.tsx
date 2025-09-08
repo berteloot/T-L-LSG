@@ -182,37 +182,6 @@ export default function AssessmentForm({ onSubmit, isLoading }: AssessmentFormPr
 
     return (
       <div className="question-card">
-        {/* Hero Content - Only show on first question */}
-        {currentQuestion === 0 && (
-          <div className="text-center mb-12">
-            {/* Main Headline */}
-            <h2 className="display-title mb-4 sm:mb-6 animate-functional-reveal">
-              Discover Your AI Readiness
-              <span className="block text-lean-blue">in Transportation & Logistics</span>
-            </h2>
-            
-            <p className="text-lg sm:text-xl text-trust-navy mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed animate-functional-guide">
-              Get personalized insights and actionable recommendations to accelerate your digital transformation journey in the T&L industry.
-            </p>
-            
-            {/* Version Badge */}
-            <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 mb-8">
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-              Stable Version 1.0.0
-            </div>
-            
-            {/* Time Estimate */}
-            <div className="inline-flex items-center px-4 py-2 bg-primary-50 rounded-full text-trust-navy text-sm font-medium animate-functional-reveal">
-              <LSGIcon name="clock" size="sm" className="mr-2" />
-              Takes about 5-7 minutes to complete
-            </div>
-            
-            {/* Solar Orange Night Accent */}
-            <div className="mt-4 flex justify-center">
-              <div className="w-2 h-2 bg-solar-orange-night rounded-full animate-pulse"></div>
-            </div>
-          </div>
-        )}
         <div className="mb-10 animate-volumetric-slide">
           <h2 className="question-title">
             {question.title}
