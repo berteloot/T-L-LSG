@@ -127,15 +127,8 @@ export default function Home() {
         <div className="relative bg-white/80 backdrop-blur-sm border-b border-neutral-200/50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
             <div className="text-center">
-              {/* Logo and Brand */}
+              {/* Brand Title */}
               <div className="mb-8 animate-volumetric-slide">
-                <div className="flex justify-center mb-6">
-                  <img 
-                    src="/LSG_Logo_Horizontal_RGB_Lean Blue.png" 
-                    alt="LSG Logo" 
-                    className="h-12 sm:h-16 w-auto"
-                  />
-                </div>
                 <h1 className="section-title mb-2">Transportation & Logistics Assessment Platform</h1>
               </div>
               
