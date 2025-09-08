@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import AssessmentForm from '@/components/AssessmentForm';
 import ContactModal from '@/components/ContactModal';
+import Header from '@/components/Header';
 import LSGIcon from '@/components/LSGIcon';
 import { z } from 'zod';
 
@@ -113,6 +114,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Header */}
+      <Header />
+      
       {/* Hero Header */}
       <div className="relative overflow-hidden">
         {/* Background Pattern */}
@@ -125,8 +129,12 @@ export default function Home() {
             <div className="text-center">
               {/* Logo and Brand */}
               <div className="mb-8 animate-volumetric-slide">
-                <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 primary-gradient rounded-2xl shadow-brand mb-4">
-                  <LSGIcon name="check" size="lg" className="text-white" />
+                <div className="flex justify-center mb-6">
+                  <img 
+                    src="/LSG_Logo_Horizontal_RGB_Lean Blue.png" 
+                    alt="LSG Logo" 
+                    className="h-12 sm:h-16 w-auto"
+                  />
                 </div>
                 <h1 className="section-title mb-2">Transportation & Logistics Assessment Platform</h1>
               </div>

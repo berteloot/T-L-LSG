@@ -1,23 +1,19 @@
-import Link from 'next/link';
+import Header from '@/components/Header';
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-background-surface">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <div className="bg-white shadow-card border-b border-border-subtle">
-        <div className="max-w-4xl mx-auto mobile-optimized py-8">
+      <Header />
+      
+      {/* Page Header */}
+      <div className="bg-white border-b border-neutral-200/50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
-            <Link href="/" className="inline-block mb-6">
-              <img 
-                src="https://cdn.prod.website-files.com/636a549426aa8438b3b45fa8/63861ae0dfd2084587eb343a_LeanSolutions_2021__logo_Color_FA.svg"
-                alt="Lean Solutions Group"
-                className="h-12 mx-auto"
-              />
-            </Link>
-            <h1 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
+            <h1 className="text-3xl sm:text-4xl font-bold text-trust-navy mb-4">
               Privacy Policy
             </h1>
-            <p className="text-text-secondary">
+            <p className="text-neutral-600">
               AI Readiness Assessment Tool
             </p>
           </div>
@@ -26,8 +22,8 @@ export default function PrivacyPolicy() {
 
       {/* Content */}
       <div className="py-12 sm:py-16">
-        <div className="max-w-4xl mx-auto mobile-optimized">
-          <div className="bg-white rounded-lg shadow-card border border-border-default p-6 sm:p-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 sm:p-8">
             <div className="prose prose-lg max-w-none">
               <div className="mb-8">
                 <p className="text-sm text-text-secondary mb-4">
