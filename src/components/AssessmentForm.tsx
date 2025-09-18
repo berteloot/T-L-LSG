@@ -259,7 +259,7 @@ export default function AssessmentForm({ onSubmit, isLoading }: AssessmentFormPr
             `}
           >
             <div className="flex items-center justify-center">
-              {isLastQuestion ? (isLoading ? 'Submitting...' : 'Submit Assessment') : 'Next'}
+              {isLastQuestion ? (isLoading ? 'Submitting...' : 'Submit AI Readiness Quick Check') : 'Next'}
               {!isLastQuestion && (
                 <div className="w-5 h-5 ml-2 flex items-center justify-center">
                   <svg className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
@@ -398,7 +398,7 @@ export default function AssessmentForm({ onSubmit, isLoading }: AssessmentFormPr
             <div className="question-type-ranking mb-6">
               <div className="flex items-center">
                 <LSGIcon name="arrow-up" size="sm" className="mr-3" />
-                <span className="font-forma font-semibold">Ranking - Rate each item from 1-5</span>
+                <span className="font-forma font-semibold">Rank each concern</span>
               </div>
             </div>
             

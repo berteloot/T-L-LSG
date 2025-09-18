@@ -1,8 +1,8 @@
 export const questions = [
   {
     id: "company_roles",
-    title: "Company Profile - Roles in Logistics Value Chain",
-    subtitle: "What roles does your company play in the logistics value chain?\n(Select all that apply, then we'll ask for your primary focus)",
+    title: "Company Profile – Areas of Specialization",
+    subtitle: "Where does your company specialize in the logistics value chain?",
     type: "multi",
     category: "Company Profile",
     weight: 0,
@@ -19,7 +19,7 @@ export const questions = [
   {
     id: "primary_focus",
     title: "Primary Focus",
-    subtitle: "Which is your primary focus today?",
+    subtitle: "What is your primary focus today?",
     type: "single",
     category: "Company Profile",
     weight: 0,
@@ -64,8 +64,8 @@ export const questions = [
   },
   {
     id: "improvement_areas",
-    title: "Process Focus - Areas Needing Improvement",
-    subtitle: "In which of these areas do you think your company needs to improve?\n(Select up to 3)",
+    title: "Process Focus - Opportunity Areas",
+    subtitle: "In which areas are there opportunities to improve?\n(Select up to 3)",
     type: "multi",
     category: "Process Focus",
     weight: 0,
@@ -146,7 +146,7 @@ export const questions = [
   {
     id: "ai_concerns",
     title: "AI Concerns",
-    subtitle: "What are your biggest concerns about adopting AI?\nRank each concern from 1 (Major Concern) to 5 (Not Applicable)",
+    subtitle: "What are your biggest concerns about adopting AI?\nRank each concern",
     type: "ranking",
     category: "Openness to Change",
     weight: 0,
@@ -159,11 +159,11 @@ export const questions = [
       { value: "not_concerned", label: "Not concerned" }
     ],
     rankingLevels: [
-      { value: "1", label: "1 = Major Concern", points: 1 },
-      { value: "2", label: "2 = Moderate Concern", points: 2 },
-      { value: "3", label: "3 = Minor Concern", points: 3 },
-      { value: "4", label: "4 = Not a Concern", points: 4 },
-      { value: "5", label: "5 = Not Applicable", points: 5 }
+      { value: "1", label: "Major", points: 1 },
+      { value: "2", label: "Moderate", points: 2 },
+      { value: "3", label: "Concern", points: 3 },
+      { value: "4", label: "Concern", points: 4 },
+      { value: "5", label: "Not Applicable", points: 5 }
     ]
   },
   {

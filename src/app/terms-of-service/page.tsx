@@ -15,7 +15,7 @@ export default function TermsOfService() {
               Terms of Service
             </h1>
             <p className="text-neutral-600">
-              AI Readiness Assessment Tool
+              AI Readiness Quick Check
             </p>
           </div>
         </div>
@@ -39,14 +39,14 @@ export default function TermsOfService() {
                 Agreement to Terms
               </h2>
               <p className="mb-6">
-                By accessing and using the AI Readiness Assessment Tool (the &ldquo;Service&rdquo;) provided by Lean Solutions Group (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;), you agree to be bound by these Terms of Service (&ldquo;Terms&rdquo;). If you disagree with any part of these terms, you may not access the Service.
+                By accessing and using the AI Readiness Quick Check (the &ldquo;Service&rdquo;) provided by Lean Solutions Group (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;), you agree to be bound by these Terms of Service (&ldquo;Terms&rdquo;). If you disagree with any part of these terms, you may not access the Service.
               </p>
 
               <h2 className="text-xl font-semibold text-text-primary mb-4">
                 Description of Service
               </h2>
               <p className="mb-6">
-                The AI Readiness Assessment Tool is a comprehensive evaluation platform that analyzes your organization&apos;s readiness for artificial intelligence transformation. The Service provides personalized assessments, scoring, and detailed reports based on your responses to our evaluation questions.
+                The AI Readiness Quick Check is a comprehensive evaluation platform that analyzes your organization&apos;s readiness for artificial intelligence transformation. The Service provides personalized assessments, scoring, and detailed reports based on your responses to our evaluation questions.
               </p>
 
               <h2 className="text-xl font-semibold text-text-primary mb-4">

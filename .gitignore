@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+node_modules 2/
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -35,6 +36,34 @@ next-env.d.ts
 
 # Prisma
 /prisma/migrations/
+.gitignore
+.gitattributes
+.github/
+.vscode/
+.idea/
+.history/
+.cache/
+.temp/
+.tmp/
+.DS_Store
+.next/
+.vercel/
+.env*
+.npm/
+.pnpm-store/
+.yarn/
+.turbo/
+.swc/
+.parcel-cache/
+.svelte-kit/
+.astro/
+.docusaurus/
+.cache-loader/
+.eslintcache
+.tsbuildinfo
+prisma/*.otf
+prisma/*.ttf
+prisma/*.textClipping
 .env
 .env.local
 .env.production

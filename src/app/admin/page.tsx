@@ -511,7 +511,7 @@ This action cannot be undone.`;
         <div className="max-w-md w-full space-y-8">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
-            <h2 className="text-xl font-semibold text-gray-900">Validating session...</h2>
+            <h2 className="text-xl font-semibold text-midnight-core">Validating session...</h2>
             <p className="text-sm text-gray-600">Please wait while we verify your access</p>
           </div>
         </div>
@@ -525,7 +525,7 @@ This action cannot be undone.`;
       <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-midnight-core">
               Admin Access
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
@@ -581,7 +581,7 @@ This action cannot be undone.`;
       <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <div className="px-4 py-6 sm:px-0">
           <div className="flex justify-between items-center mb-6">
-            <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
+            <h1 className="text-3xl font-bold text-midnight-core">Admin Dashboard</h1>
             <div className="flex space-x-3">
               <button
                 onClick={async () => {
@@ -666,7 +666,7 @@ This action cannot be undone.`;
               <div className="px-4 py-5 sm:px-6">
                 <div className="flex justify-between items-center">
                   <div>
-                    <h3 className="text-lg leading-6 font-medium text-gray-900">
+                    <h3 className="text-lg leading-6 font-medium text-midnight-core">
                       Submissions ({submissions.length})
                     </h3>
                     <p className="mt-1 max-w-2xl text-sm text-gray-500">
@@ -869,7 +869,7 @@ This action cannot be undone.`;
               <div className="px-4 py-5 sm:px-6">
                 <div className="flex justify-between items-center">
                   <div>
-                    <h3 className="text-lg leading-6 font-medium text-gray-900">
+                    <h3 className="text-lg leading-6 font-medium text-midnight-core">
                       Users ({users.length})
                     </h3>
                     <p className="mt-1 max-w-2xl text-sm text-gray-500">

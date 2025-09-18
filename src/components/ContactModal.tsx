@@ -77,13 +77,13 @@ export default function ContactModal({ isOpen, onClose, onSubmit, onStartOver, i
           // Contact Form
           <>
             <div className="text-center mb-8">
-              <div className="w-16 h-16 accent-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-card">
+              <div className="w-16 h-16 lavender-gradient rounded-full flex items-center justify-center mx-auto mb-4 shadow-card">
                 <svg className="w-8 h-8 text-text-onAccent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-text-primary mb-2">Get Your Report</h3>
-              <p className="text-text-secondary">Enter your business details to receive your AI Readiness report</p>
+              <p className="text-text-secondary">Enter your business details to receive your AI Readiness Quick Check report</p>
               <div className="mt-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
                 <p className="text-sm text-blue-700">
                   <strong>Note:</strong> Please use your company email address. Personal email addresses (Gmail, Yahoo, etc.) are not accepted.
@@ -139,7 +139,7 @@ export default function ContactModal({ isOpen, onClose, onSubmit, onStartOver, i
                   className="mt-1 h-5 w-5 text-accent-600 rounded border-border-default focus:ring-accent-500 focus:ring-2"
                 />
                 <label htmlFor="consent" className="text-sm text-text-secondary leading-relaxed">
-                  I consent to receive my AI Readiness report via email. I understand that my responses will be used to generate a personalized report and may be stored for analysis purposes.
+                  I consent to receive my AI Readiness Quick Check report via email. I understand that my responses will be used to generate a personalized report and may be stored for analysis purposes.
                 </label>
               </div>
               {errors.consent && (
@@ -173,8 +173,8 @@ export default function ContactModal({ isOpen, onClose, onSubmit, onStartOver, i
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-text-primary mb-2">Assessment Complete! 🎉</h3>
-              <p className="text-text-secondary">Your AI Readiness report has been generated and sent to your email</p>
+              <h3 className="text-2xl font-bold text-text-primary mb-2">AI Readiness Quick Check Complete! 🎉</h3>
+              <p className="text-text-secondary">Your AI Readiness Quick Check report has been generated and sent to your email</p>
             </div>
 
             {/* Results Summary */}

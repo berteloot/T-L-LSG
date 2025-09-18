@@ -60,9 +60,9 @@ export default function Home() {
     setError(null);
     
     try {
-      // Validate that we have assessment data
+      // Validate that we have quick check data
       if (!assessmentData) {
-        throw new Error('Assessment data is missing. Please complete the assessment first.');
+        throw new Error('AI Readiness Quick Check data is missing. Please complete the quick check first.');
       }
 
       // Prepare the submission data
@@ -129,7 +129,7 @@ export default function Home() {
             <div className="text-center">
               {/* Brand Title */}
               <div className="mb-8 animate-volumetric-slide">
-                <h1 className="section-title mb-2">Transportation & Logistics Assessment Platform</h1>
+                <h1 className="section-title mb-2 uppercase text-lean-blue font-normal font-forma">Transportation & Logistics AI Readiness Quick Check</h1>
               </div>
               
               {/* Main Headline */}
@@ -180,7 +180,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Main Assessment */}
+      {/* Main AI Readiness Quick Check */}
       {error ? (
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="bg-red-50 border border-red-200 rounded-xl p-4 sm:p-6 animate-functional-reveal">
@@ -200,11 +200,11 @@ export default function Home() {
       <AssessmentForm onSubmit={handleAssessmentComplete} isLoading={isLoading} />
 
       {/* Footer */}
-      <div className="bg-midnight-core border-t border-solar-orange-night mt-16 sm:mt-20">
+      <div className="bg-midnight-core border-t border-lavender-200 mt-16 sm:mt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="text-center">
             <div className="text-white mb-4 sm:mb-6">
-              <p className="text-lg sm:text-xl font-forma font-semibold mb-1">T&L LSG Assessment Platform</p>
+              <p className="text-lg sm:text-xl font-forma font-semibold mb-1">T&L LSG AI Readiness Quick Check</p>
               <p className="text-sm text-neutral-400">Empowering Transportation & Logistics with AI</p>
             </div>
             <div className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-sm text-neutral-400">

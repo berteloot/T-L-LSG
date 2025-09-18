@@ -21,7 +21,7 @@ export default function Header({ className = '' }: HeaderProps) {
               <img 
                 src="/LSG_Logo_Horizontal_RGB_Lean Blue.png" 
                 alt="LSG Logo" 
-                className="h-8 sm:h-10 w-auto"
+                className="h-[2.6rem] sm:h-[3.25rem] w-auto"
               />
             </Link>
           </div>
@@ -32,7 +32,7 @@ export default function Header({ className = '' }: HeaderProps) {
               href="/" 
               className="text-trust-navy hover:text-lean-blue transition-colors duration-200 font-medium"
             >
-              Assessment
+              AI Readiness Quick Check
             </Link>
             <Link 
               href="/privacy-policy" 
@@ -74,7 +74,7 @@ export default function Header({ className = '' }: HeaderProps) {
                 className="text-trust-navy hover:text-lean-blue block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Assessment
+                AI Readiness Quick Check
               </Link>
               <Link
                 href="/privacy-policy"
