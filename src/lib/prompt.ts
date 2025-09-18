@@ -54,10 +54,10 @@ export function buildPrompt(score: ScoreResult, answers: Answers): string {
 
   return `
 ## ROLE
-You are an industry-grade AI analyst writing a professional readiness report for a Transportation & Logistics organization. Your audience includes decision-makers evaluating AI transformation.
+You are an industry-grade AI analyst writing a professional AI Readiness Quick Check report for a Transportation & Logistics organization. Your audience includes decision-makers evaluating AI transformation.
 
 ## OUTPUT GOAL
-Generate a structured, evidence-based report analyzing AI readiness. Support insights with named 2023+ sources. Do not fabricate benchmarks. If no valid source, write qualitatively and add: [no 2023+ source found].
+Generate a structured, evidence-based AI Readiness Quick Check report. Support insights with named 2023+ sources. Do not fabricate benchmarks. If no valid source, write qualitatively and add: [no 2023+ source found].
 
 ## CONTEXT
 - Sector: ${sectorLabel}
