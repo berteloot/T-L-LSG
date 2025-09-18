@@ -190,11 +190,9 @@ export default function ContactModal({ isOpen, onClose, onSubmit, onStartOver, i
               
               {/* Tier Display */}
               <div className="text-center p-6 bg-gradient-to-br from-accent-50 to-accent-100 rounded-md border border-accent-200">
-                <div className="text-2xl font-bold text-accent-600 mb-2">
+                <div className="text-2xl font-bold text-accent-600">
                   {result.tier || 'N/A'}
                 </div>
-                <div className="text-lg text-text-secondary mb-2">Readiness Tier</div>
-                <div className="text-base text-text-secondary">Your Current Level</div>
               </div>
             </div>
 
