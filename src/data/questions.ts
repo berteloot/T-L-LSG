@@ -146,7 +146,7 @@ export const questions = [
   {
     id: "ai_concerns",
     title: "AI Concerns",
-    subtitle: "What are your biggest concerns about adopting AI?\nRank each concern",
+    subtitle: "What are your biggest concerns about adopting AI?",
     type: "ranking",
     category: "Openness to Change",
     weight: 0,

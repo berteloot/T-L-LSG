@@ -129,14 +129,13 @@ export default function Home() {
             <div className="text-center">
               {/* Brand Title */}
               <div className="mb-8 animate-volumetric-slide">
-                <h1 className="section-title mb-2 uppercase text-lean-blue font-normal font-forma">Transportation & Logistics AI Readiness Quick Check</h1>
+                <h1 className="section-title mb-2 uppercase text-lean-blue font-normal font-forma">
+                  AI Readiness Quick Check
+                  <span className="block">Transportation & Logistics</span>
+                </h1>
               </div>
               
-              {/* Main Headline */}
-              <h2 className="display-title mb-4 sm:mb-6 animate-functional-reveal">
-                Discover Your AI Readiness
-                <span className="block text-lean-blue">in Transportation & Logistics</span>
-              </h2>
+              {/* Main Headline removed per request */}
               
               <p className="text-lg sm:text-xl text-trust-navy mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed animate-functional-guide">
                 Get personalized insights and actionable recommendations to accelerate your digital transformation journey in the T&L industry.
@@ -145,25 +144,19 @@ export default function Home() {
               {/* Key Benefits - LSG Brand Design */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto mb-8">
                 <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-neutral-200/50 shadow-sm hover:shadow-brand transition-all duration-200">
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <LSGIcon name="analytics" size="md" className="text-lean-blue" />
-                  </div>
+                  <img src="/svg/lsg_icon_datascience-01.svg" alt="Data Science Icon" className="w-10 h-10 mx-auto mb-3" />
                   <h3 className="card-title mb-2 text-sm sm:text-base">12 Key Areas</h3>
                   <p className="small-text text-xs sm:text-sm">Comprehensive evaluation across all critical T&L functions</p>
                 </div>
                 
                 <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-neutral-200/50 shadow-sm hover:shadow-brand transition-all duration-200">
-                  <div className="w-12 h-12 bg-aqua-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <LSGIcon name="ai" size="md" className="text-aqua-600" />
-                  </div>
+                  <img src="/svg/lsg_icon_transportation-logistics-01.svg" alt="Transportation & Logistics Icon" className="w-10 h-10 mx-auto mb-3" />
                   <h3 className="card-title mb-2 text-sm sm:text-base">Instant Results</h3>
                   <p className="small-text text-xs sm:text-sm">AI-powered report delivered to your email in minutes</p>
                 </div>
                 
                 <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-neutral-200/50 shadow-sm hover:shadow-brand transition-all duration-200">
-                  <div className="w-12 h-12 bg-lavender-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <LSGIcon name="truck" size="md" className="text-lavender-600" />
-                  </div>
+                  <img src="/svg/lsg_icon_transportation-logistics02-01.svg" alt="Actionable Insights Icon" className="w-10 h-10 mx-auto mb-3" />
                   <h3 className="card-title mb-2 text-sm sm:text-base">Actionable Insights</h3>
                   <p className="small-text text-xs sm:text-sm">Personalized recommendations for your specific needs</p>
                 </div>
